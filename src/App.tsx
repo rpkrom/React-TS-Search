@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import React, { useState } from 'react'
 import { useGetSynonyms } from './hooks/useGetSynonyms';
 
 
@@ -24,14 +23,14 @@ function App() {
     <div className="App">
       <form onSubmit={handleFetchSynonyms}>
         <label htmlFor="word-input">Your word</label>
-        <input
-          id="word-input"
+        <input id="word-input"
           value={word}
-          onChange={(e) => setWord(e.target.value)} 
-        ></input>
+          onChange={(e) => setWord(e.target.value)} >
+        </input>
         <button>Submit</button>
       </form>
 
+      {/* Results List */}
       {isLoading ? ( <div>Loading...</div> ) : (
         <ul>
           {synonyms.map((synonym) => 
